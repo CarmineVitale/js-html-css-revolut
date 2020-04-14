@@ -3,8 +3,20 @@ $(document).ready(function () {
     var prodotti = $('li.dropdown a');
     
     prodotti.click(function () { 
-       menu.toggle();
-       
+        
+        menu.not($(this).next('.dropdown-menu')).hide();
+        $(this).next('.dropdown-menu').toggle();
         
     });
-});
+   
+    var language = $('.language');
+
+    language.click(function () { 
+        $('i').toggleClass('fa-angle-up');
+        
+    });
+
+
+
+
+}); // <------END READY
